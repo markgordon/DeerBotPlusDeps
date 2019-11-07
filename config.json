@@ -1,0 +1,46 @@
+{
+	"loopdelay": "400",
+	"imagesavelevel": "1",
+	"loglevel":"1",
+	"cameras":
+	[
+		{
+				"id": "imagecam",
+				"ip": "192.168.1.222",
+				"uid": "admin",
+				"pwd": "newpw111",
+				"filename": "C:\Users\mg\Downloads",
+				"bounds":
+				[
+					{"x":0, "y":0, "width":2000, "height":683}
+				]
+		}
+	],
+	"scenes":
+	[
+		{
+			"scene_name": "people",
+			"savepath": "f:/tmp/imgs/",
+			"disable": "0",
+			"skip":500,
+			"logic": 0,
+			"cameralogic": 0,
+			"detectors" :
+			[
+				{
+					"id" : "detect",
+					"config" : "/home/mark/cfg/yolov3.cfg",
+					"weights": "/home/mark/cfg/yolov3.weights",
+					"names": "/home/mark/cfg/coco.names",
+					"threshold": ".9",
+					"interest":
+					[
+						{"object":"person"},
+						{"object":"car"},
+						{"object":"cat"}
+					]
+				}
+			]
+		}
+	]
+}

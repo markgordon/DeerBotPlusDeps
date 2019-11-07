@@ -1,0 +1,51 @@
+{
+	"loopdelay": "0",
+	"imagesavelevel": "3",
+	"loglevel":"1",
+	"cameras":
+	[
+		{
+				"id": "imagecam",
+				"ip": "192.168.1.222",
+				"uid": "admin",
+				"filename": "C:/Users/mg/source/repos/Yolo_mark/data/test",
+				"pwd": "newpw111",
+				"bounds":
+				[
+					
+				]
+		}
+	],
+	"scenes":
+	[
+		{
+			"scene_name": "people",
+			"savepath": "f:/tmp/imgs/",
+			"disable": "0",
+			"skip":10,
+			"logic": 0,
+			"cameralogic": 0,
+			"detectors" :
+			[
+				{
+					"id" : "detect",
+					"type" : "darknet",
+					"config" : "C:/Users/mg/source/repos/DeerBot/config/yolov3-tiny.cfg",
+					"weights": "C:/Users/mg/source/repos/DeerBot/config/yolov3-tiny_best62.4.weights",
+					"names": "C:/Users/mg/source/repos/DeerBot/config/obj.names",
+					"threshold": ".1",
+					"interest":
+					[
+						{"object":"whitetail"},
+						{"object":"person"}
+					]
+				}
+			],
+			"imagers" : 
+			[
+				{"camera":"imagecam"}
+			]
+				
+		}
+	]
+}
